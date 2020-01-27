@@ -17,7 +17,7 @@ const myPokemon = (state = initialState, action) => {
       localStorage.setItem('pokemonOwned', JSON.stringify([...state.pokemonOwned, pokemon]))
       return {
         ...state,
-        pokemonOwned: [...state.pokemonOwned, pokemon]
+        pokemonOwned: [pokemon, ...state.pokemonOwned]
       };
 
     case RELEASE_MYPOKE_SUCCESS:

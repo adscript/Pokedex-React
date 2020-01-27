@@ -6,7 +6,7 @@ import {
   CATCH_POKEMON_FAILURE,
 } from '../constants';
 import Swal from 'sweetalert2';
-
+import { push } from 'connected-react-router';
 
 // CATCH POKEMON
 const catchPokemonSuccess = (pokemon = {}) => ({
@@ -54,6 +54,7 @@ export function catchPokemon(pokemon = {}, myPokemon = [], index) {
         }).then(() => {
           pokemon = { ...pokemon, nickname: nickname.value }
           dispatch(catchPokemonSuccess(pokemon))
+          dispatch(push('/my-list'))
         })
       })
     } else {
