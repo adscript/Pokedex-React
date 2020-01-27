@@ -5,7 +5,7 @@ import {
 } from '../constants'
 
 const initialState = {
-  pokemonOwned: [],
+  pokemonOwned: JSON.parse(localStorage.getItem('pokemonOwned')) || [],
 };
 
 const myPokemon = (state = initialState, action) => {
@@ -14,12 +14,14 @@ const myPokemon = (state = initialState, action) => {
 
   switch (type) {
     case CATCH_POKEMON_SUCCESS:
+      localStorage.setItem('pokemonOwned', JSON.stringify([...state.pokemonOwned, pokemon]))
       return {
         ...state,
         pokemonOwned: [...state.pokemonOwned, pokemon]
       };
 
     case RELEASE_MYPOKE_SUCCESS:
+      localStorage.setItem('pokemonOwned', JSON.stringify([...state.pokemonOwned.filter(item => (item.nickname !== pokemon.nickname))]))
       return {
         ...state,
         pokemonOwned: state.pokemonOwned.filter(item => (item.nickname !== pokemon.nickname)),
