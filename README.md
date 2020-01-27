@@ -1,3 +1,6 @@
+
+DEMO SITE: [Pokemon Dex By Adnan Radja Maulana](https://adnamon.netlify.com)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

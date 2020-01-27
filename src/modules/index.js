@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { Route, Router } from "react-router-dom";
 import store, { history } from "../store";
 import {
-  PokeList, 
+  PokeList,
   PokeDetail,
   MyPokemon
 } from '../containers';
