@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { PokeCard, PokeBar, Loading, FilterModal } from "../components";
+import { PokeCard, PokeBar, Loading } from "../components";
 import {
   Grid,
   InputLabel,
